@@ -1,4 +1,4 @@
-package lab4.sectionx.yourname.logic;
+package lab4.sectionB01.daniellovegrove.logic;
 
 public class OSIRandom
 {

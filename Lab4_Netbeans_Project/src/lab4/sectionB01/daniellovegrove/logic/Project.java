@@ -1,6 +1,6 @@
-package lab4.sectionx.yourname.logic;
+package lab4.sectionB01.daniellovegrove.logic;
 
-import lab4.sectionx.yourname.gobackn.StudentNetworkSimulator;
+import lab4.sectionB01.daniellovegrove.gobackn.StudentNetworkSimulator;
 import java.io.*;
 
 public class Project

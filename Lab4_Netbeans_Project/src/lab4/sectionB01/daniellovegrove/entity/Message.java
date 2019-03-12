@@ -1,6 +1,6 @@
-package lab4.sectionx.yourname.entity;
+package lab4.sectionB01.daniellovegrove.entity;
 
-import lab4.sectionx.yourname.logic.NetworkSimulator;
+import lab4.sectionB01.daniellovegrove.logic.NetworkSimulator;
 
 public class Message
 {

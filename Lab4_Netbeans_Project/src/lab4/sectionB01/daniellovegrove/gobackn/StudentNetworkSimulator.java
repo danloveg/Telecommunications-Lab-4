@@ -1,8 +1,8 @@
-package lab4.sectionx.yourname.gobackn;
+package lab4.sectionB01.daniellovegrove.gobackn;
 
-import lab4.sectionx.yourname.entity.Packet;
-import lab4.sectionx.yourname.entity.Message;
-import lab4.sectionx.yourname.logic.NetworkSimulator;
+import lab4.sectionB01.daniellovegrove.entity.Packet;
+import lab4.sectionB01.daniellovegrove.entity.Message;
+import lab4.sectionB01.daniellovegrove.logic.NetworkSimulator;
 
 public class StudentNetworkSimulator extends NetworkSimulator
 {

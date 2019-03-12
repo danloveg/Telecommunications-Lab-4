@@ -1,7 +1,7 @@
-package lab4.sectionx.yourname.logic;
+package lab4.sectionB01.daniellovegrove.logic;
 
 import java.util.Vector;
-import lab4.sectionx.yourname.entity.Event;
+import lab4.sectionB01.daniellovegrove.entity.Event;
 
 public class EventListImpl implements EventList
 {

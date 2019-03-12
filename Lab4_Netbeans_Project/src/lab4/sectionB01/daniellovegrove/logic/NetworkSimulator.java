@@ -1,8 +1,8 @@
-package lab4.sectionx.yourname.logic;
+package lab4.sectionB01.daniellovegrove.logic;
 
-import lab4.sectionx.yourname.entity.Packet;
-import lab4.sectionx.yourname.entity.Event;
-import lab4.sectionx.yourname.entity.Message;
+import lab4.sectionB01.daniellovegrove.entity.Packet;
+import lab4.sectionB01.daniellovegrove.entity.Event;
+import lab4.sectionB01.daniellovegrove.entity.Message;
 import java.util.Vector;
 import java.util.Enumeration;
 import java.io.*;
