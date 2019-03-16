@@ -1,6 +1,8 @@
 package lab4.sectionB01.daniellovegrove.gobackn;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import lab4.sectionB01.daniellovegrove.entity.Packet;
 import lab4.sectionB01.daniellovegrove.entity.Message;
@@ -42,6 +44,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
     protected static class SenderState {
         protected static double retransmitInterval;
         protected static boolean messageInTransit = false;
+        protected static List<Packet> previousSentPackets;
         protected static Queue<Message> messageBuffer;
         protected static int nextSequenceNumber;
         protected static int baseSequenceNumber;
@@ -52,6 +55,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
     protected void aInit()
     {
         SenderState.retransmitInterval = this.RxmtInterval;
+        SenderState.previousSentPackets = new ArrayList<>();
         SenderState.messageBuffer = new LinkedList<>();
         SenderState.nextSequenceNumber = 0;
         SenderState.baseSequenceNumber = 0;
@@ -71,6 +75,11 @@ public class StudentNetworkSimulator extends NetworkSimulator
             // Increment window
             SenderState.baseSequenceNumber = packet.getAcknum() + 1;
 
+            // Send a message that has been queued
+            if (false == SenderState.messageBuffer.isEmpty()) {
+                aOutput(SenderState.messageBuffer.remove());
+            };
+
             if (SenderState.baseSequenceNumber == SenderState.nextSequenceNumber) {
                 stopTimer(A);
             } else {
@@ -82,7 +91,12 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // FSM: timeout
     protected void aTimerInterrupt()
     {
+        startTimer(A, SenderState.retransmitInterval);
 
+        // Resend previous packets that receiver did not get
+        for (int i = SenderState.baseSequenceNumber; i < SenderState.nextSequenceNumber; i++) {
+            toLayer3(A, SenderState.previousSentPackets.get(i));
+        }
     }
     
     // -------------------------------------------------------------------------
