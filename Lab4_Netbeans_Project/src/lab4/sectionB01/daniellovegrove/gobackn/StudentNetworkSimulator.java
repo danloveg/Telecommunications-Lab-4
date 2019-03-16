@@ -10,16 +10,9 @@ import lab4.sectionB01.daniellovegrove.logic.NetworkSimulator;
 
 public class StudentNetworkSimulator extends NetworkSimulator
 {
-    /*   Please use the following variables in your routines.
-     *   int WindowSize  : the window size
-     *   double RxmtInterval   : the retransmission timeout
-     *   int LimitSeqNo  : when sequence number reaches this value, it wraps around
-     */
-
     private final int WindowSize;
     private final double RxmtInterval;
-    private final int LimitSeqNo;
-    
+
     public StudentNetworkSimulator(int numMessages,
                                    double loss,
                                    double corrupt,
@@ -31,7 +24,6 @@ public class StudentNetworkSimulator extends NetworkSimulator
     {
         super(numMessages, loss, corrupt, avgDelay, trace, seed);
 	WindowSize = winsize;
-	LimitSeqNo = winsize+1;
 	RxmtInterval = delay;
     }
 
@@ -40,7 +32,6 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // -------------------------------------------------------------------------
     // --- SENDER (entity A) ---
     // -------------------------------------------------------------------------
-
     protected static class SenderState {
         protected static boolean timerRunning = false;
         protected static double retransmitInterval;
@@ -106,7 +97,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
 
             // Reset timer if the first packet in the window is received
             if (SenderState.baseSequenceNumber == SenderState.nextSequenceNumber) {
-                stopTimer(A);
+                if (SenderState.timerRunning) stopTimer(A);
                 SenderState.timerRunning = false;
             } else {
                 if (SenderState.timerRunning) stopTimer(A);
@@ -131,7 +122,6 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // -------------------------------------------------------------------------
     // --- RECEIVER (entity B) ---
     // -------------------------------------------------------------------------
-
     protected static class ReceiverState {
         protected static int sequenceNumberRequired;
         protected static int lastGoodPacketReceived;
