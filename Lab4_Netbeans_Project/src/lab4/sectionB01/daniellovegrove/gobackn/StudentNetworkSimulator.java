@@ -67,7 +67,16 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // FSM: rdt_rcv(rcvpkt)
     protected void aInput(Packet packet)
     {
+        if (false == NetworkUtilities.packetIsCorrupt(packet)) {
+            // Increment window
+            SenderState.baseSequenceNumber = packet.getAcknum() + 1;
 
+            if (SenderState.baseSequenceNumber == SenderState.nextSequenceNumber) {
+                stopTimer(A);
+            } else {
+                startTimer(A, SenderState.retransmitInterval);
+            }
+        }
     }
 
     // FSM: timeout
