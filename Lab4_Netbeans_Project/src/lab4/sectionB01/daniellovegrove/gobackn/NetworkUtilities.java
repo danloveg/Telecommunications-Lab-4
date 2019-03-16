@@ -26,4 +26,9 @@ public class NetworkUtilities {
     public static boolean packetIsCorrupt(Packet packet) {
         return calculateChecksum(packet) == packet.getChecksum();
     }
+
+    // Determine if a packet is a NAK packet
+    public static boolean packetIsACK(Packet packet) {
+        return packet.getPayload().equals("ACK");
+    }
 }
