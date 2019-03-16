@@ -28,9 +28,4 @@ public class NetworkUtilities {
         int calculatedChecksum = calculateChecksum(packet);
         return calculatedChecksum != packetChecksum;
     }
-
-    // Determine if a packet is a NAK packet
-    public static boolean packetIsACK(Packet packet) {
-        return packet.getPayload().equals("ACK");
-    }
 }

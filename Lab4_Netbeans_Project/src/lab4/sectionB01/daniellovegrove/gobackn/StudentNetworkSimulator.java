@@ -61,8 +61,8 @@ public class StudentNetworkSimulator extends NetworkSimulator
             // Create a new packet to send to B
             Packet packetToSend = NetworkUtilities.createPacket(
                     message.getData(), SenderState.nextSequenceNumber, -1);
-
             // Send the new packet
+            System.out.println("(A): Sending a message with SEQ# " + SenderState.nextSequenceNumber);
             toLayer3(A, packetToSend);
 
             // Start a timer for the first packet in the window only
@@ -84,9 +84,9 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // FSM: rdt_rcv(rcvpkt)
     protected void aInput(Packet packet)
     {
-        boolean isACK = NetworkUtilities.packetIsACK(packet);
+        if (false == NetworkUtilities.packetIsCorrupt(packet)) {
+            System.out.println("(A): Received ACK" + packet.getAcknum());
 
-        if (false == NetworkUtilities.packetIsCorrupt(packet) && isACK) {
             // Increment window
             SenderState.baseSequenceNumber = packet.getAcknum() + 1;
 
@@ -110,11 +110,20 @@ public class StudentNetworkSimulator extends NetworkSimulator
     // FSM: timeout
     protected void aTimerInterrupt()
     {
+        // Print a message
+        int startSeqNum = SenderState.baseSequenceNumber;
+        int finalSeqNum = SenderState.nextSequenceNumber;
+        StringBuilder messageBuilder = new StringBuilder();
+        messageBuilder.append("(A): A TIMEOUT HAS OCCURRED. Resending packets with ");
+        messageBuilder.append(String.format("SEQ# %d to %d", startSeqNum, finalSeqNum - 1));
+        System.out.println(messageBuilder.toString());
+
+        // Restart the timer
         startTimer(A, SenderState.retransmitInterval);
         SenderState.timerRunning = true;
 
         // Resend previous packets that receiver did not get
-        for (int i = SenderState.baseSequenceNumber; i < SenderState.nextSequenceNumber; i++) {
+        for (int i = startSeqNum; i < finalSeqNum; i++) {
             toLayer3(A, SenderState.previousSentPackets.get(i));
         }
     }
@@ -138,20 +147,21 @@ public class StudentNetworkSimulator extends NetworkSimulator
     {
         if (false == NetworkUtilities.packetIsCorrupt(packet)) {
             if (packet.getSeqnum() == ReceiverState.sequenceNumberRequired) {
+                System.out.println("(B): Received the correct packet. Sending ACK" +
+                        ReceiverState.sequenceNumberRequired);
+
                 // Send accumulative ACK
                 Packet packetToSend = NetworkUtilities.createPacket(
-                        "ACK", -1, ReceiverState.sequenceNumberRequired);
+                        "", -1, ReceiverState.sequenceNumberRequired);
 
                 toLayer3(B, packetToSend);
                 toLayer5(packet.getPayload());
 
                 ReceiverState.sequenceNumberRequired++;
-            } else if (ReceiverState.lastGoodPacketReceived == -1) {
-                // Send NAK if first packet received is out of order
-                Packet packetToSend = NetworkUtilities.createPacket("NAK", -1, -1);
-
-                toLayer3(B, packetToSend);
             } else {
+                System.out.println("(B): Received out of order packet. Sending ACK " +
+                        ReceiverState.lastGoodPacketReceived);
+
                 // Send duplicate ACK for out of order packet
                 Packet packetToSend = NetworkUtilities.createPacket(
                         "ACK", -1, ReceiverState.lastGoodPacketReceived);

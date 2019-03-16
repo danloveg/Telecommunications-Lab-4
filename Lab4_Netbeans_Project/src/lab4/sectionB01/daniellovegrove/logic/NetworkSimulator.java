@@ -359,7 +359,7 @@ public abstract class NetworkSimulator
     }
 
     private void Simulation_done() {
-        System.out.println("Simulation Completed!."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Simulation Completed!");
     }
     
 }
