@@ -27,8 +27,6 @@ public class StudentNetworkSimulator extends NetworkSimulator
 	RxmtInterval = delay;
     }
 
-    protected void Simulation_done() { }
-
     // -------------------------------------------------------------------------
     // --- SENDER (entity A) ---
     // -------------------------------------------------------------------------
@@ -52,6 +50,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
         SenderState.windowSize = this.WindowSize;
     }
 
+    // Send data to B.
     // FSM: rdt_send(data)
     protected void aOutput(Message message)
     {
@@ -81,6 +80,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
         }
     }
 
+    // Receive packets from B.
     // FSM: rdt_rcv(rcvpkt)
     protected void aInput(Packet packet)
     {
@@ -107,6 +107,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
         }
     }
 
+    // Called on A's timer timeout
     // FSM: timeout
     protected void aTimerInterrupt()
     {
@@ -124,10 +125,11 @@ public class StudentNetworkSimulator extends NetworkSimulator
 
         // Resend previous packets that receiver did not get
         for (int i = startSeqNum; i < finalSeqNum; i++) {
+            System.out.println("(A): Sending a message with SEQ# " + i);
             toLayer3(A, SenderState.previousSentPackets.get(i));
         }
     }
-    
+
     // -------------------------------------------------------------------------
     // --- RECEIVER (entity B) ---
     // -------------------------------------------------------------------------
@@ -142,6 +144,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
         ReceiverState.lastGoodPacketReceived = -1;
     }
 
+    // Receive packets from A.
     // FSM: rdt_rcv(rcvpkt)
     protected void bInput(Packet packet)
     {
