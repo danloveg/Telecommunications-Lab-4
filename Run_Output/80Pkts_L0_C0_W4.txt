@@ -1,0 +1,251 @@
+-- * Network Simulator v1.0 * --
+Enter number of messages to simulate (> 0): [10] 80
+Enter packet loss probability (0.0 for no loss): [0.0] 0
+Enter packet corruption probability (0.0 for no corruption): [0.0] 0
+Enter average time between messages from sender's layer 5 (> 0.0): [1000] 1000
+Enter window size (> 0): [8] 4
+Enter retransmission timeout (>0.0) [15.0] 60
+Enter trace level (>= 0): [0] 1
+Enter random seed: [0] 7134
+(A): Sending a message with SEQ# 0
+(B): Received the correct packet. Sending ACK0
+(A): Received ACK0
+(A): Sending a message with SEQ# 1
+(B): Received the correct packet. Sending ACK1
+(A): Received ACK1
+(A): Sending a message with SEQ# 2
+(B): Received the correct packet. Sending ACK2
+(A): Received ACK2
+(A): Sending a message with SEQ# 3
+(B): Received the correct packet. Sending ACK3
+(A): Received ACK3
+(A): Sending a message with SEQ# 4
+(B): Received the correct packet. Sending ACK4
+(A): Received ACK4
+(A): Sending a message with SEQ# 5
+(B): Received the correct packet. Sending ACK5
+(A): Received ACK5
+(A): Sending a message with SEQ# 6
+(B): Received the correct packet. Sending ACK6
+(A): Received ACK6
+(A): Sending a message with SEQ# 7
+(B): Received the correct packet. Sending ACK7
+(A): Received ACK7
+(A): Sending a message with SEQ# 8
+(B): Received the correct packet. Sending ACK8
+(A): Received ACK8
+(A): Sending a message with SEQ# 9
+(B): Received the correct packet. Sending ACK9
+(A): Received ACK9
+(A): Sending a message with SEQ# 10
+(B): Received the correct packet. Sending ACK10
+(A): Received ACK10
+(A): Sending a message with SEQ# 11
+(B): Received the correct packet. Sending ACK11
+(A): Received ACK11
+(A): Sending a message with SEQ# 12
+(B): Received the correct packet. Sending ACK12
+(A): Received ACK12
+(A): Sending a message with SEQ# 13
+(B): Received the correct packet. Sending ACK13
+(A): Received ACK13
+(A): Sending a message with SEQ# 14
+(B): Received the correct packet. Sending ACK14
+(A): Received ACK14
+(A): Sending a message with SEQ# 15
+(B): Received the correct packet. Sending ACK15
+(A): Received ACK15
+(A): Sending a message with SEQ# 16
+(B): Received the correct packet. Sending ACK16
+(A): Received ACK16
+(A): Sending a message with SEQ# 17
+(B): Received the correct packet. Sending ACK17
+(A): Received ACK17
+(A): Sending a message with SEQ# 18
+(B): Received the correct packet. Sending ACK18
+(A): Received ACK18
+(A): Sending a message with SEQ# 19
+(B): Received the correct packet. Sending ACK19
+(A): Received ACK19
+(A): Sending a message with SEQ# 20
+(B): Received the correct packet. Sending ACK20
+(A): Received ACK20
+(A): Sending a message with SEQ# 21
+(B): Received the correct packet. Sending ACK21
+(A): Received ACK21
+(A): Sending a message with SEQ# 22
+(B): Received the correct packet. Sending ACK22
+(A): Received ACK22
+(A): Sending a message with SEQ# 23
+(B): Received the correct packet. Sending ACK23
+(A): Received ACK23
+(A): Sending a message with SEQ# 24
+(B): Received the correct packet. Sending ACK24
+(A): Received ACK24
+(A): Sending a message with SEQ# 25
+(B): Received the correct packet. Sending ACK25
+(A): Received ACK25
+(A): Sending a message with SEQ# 26
+(B): Received the correct packet. Sending ACK26
+(A): Received ACK26
+(A): Sending a message with SEQ# 27
+(B): Received the correct packet. Sending ACK27
+(A): Received ACK27
+(A): Sending a message with SEQ# 28
+(B): Received the correct packet. Sending ACK28
+(A): Received ACK28
+(A): Sending a message with SEQ# 29
+(B): Received the correct packet. Sending ACK29
+(A): Received ACK29
+(A): Sending a message with SEQ# 30
+(B): Received the correct packet. Sending ACK30
+(A): Received ACK30
+(A): Sending a message with SEQ# 31
+(B): Received the correct packet. Sending ACK31
+(A): Received ACK31
+(A): Sending a message with SEQ# 32
+(B): Received the correct packet. Sending ACK32
+(A): Received ACK32
+(A): Sending a message with SEQ# 33
+(B): Received the correct packet. Sending ACK33
+(A): Received ACK33
+(A): Sending a message with SEQ# 34
+(B): Received the correct packet. Sending ACK34
+(A): Received ACK34
+(A): Sending a message with SEQ# 35
+(B): Received the correct packet. Sending ACK35
+(A): Received ACK35
+(A): Sending a message with SEQ# 36
+(B): Received the correct packet. Sending ACK36
+(A): Received ACK36
+(A): Sending a message with SEQ# 37
+(B): Received the correct packet. Sending ACK37
+(A): Received ACK37
+(A): Sending a message with SEQ# 38
+(B): Received the correct packet. Sending ACK38
+(A): Received ACK38
+(A): Sending a message with SEQ# 39
+(B): Received the correct packet. Sending ACK39
+(A): Received ACK39
+(A): Sending a message with SEQ# 40
+(B): Received the correct packet. Sending ACK40
+(A): Received ACK40
+(A): Sending a message with SEQ# 41
+(B): Received the correct packet. Sending ACK41
+(A): Received ACK41
+(A): Sending a message with SEQ# 42
+(B): Received the correct packet. Sending ACK42
+(A): Received ACK42
+(A): Sending a message with SEQ# 43
+(B): Received the correct packet. Sending ACK43
+(A): Received ACK43
+(A): Sending a message with SEQ# 44
+(B): Received the correct packet. Sending ACK44
+(A): Received ACK44
+(A): Sending a message with SEQ# 45
+(B): Received the correct packet. Sending ACK45
+(A): Received ACK45
+(A): Sending a message with SEQ# 46
+(B): Received the correct packet. Sending ACK46
+(A): Received ACK46
+(A): Sending a message with SEQ# 47
+(B): Received the correct packet. Sending ACK47
+(A): Received ACK47
+(A): Sending a message with SEQ# 48
+(B): Received the correct packet. Sending ACK48
+(A): Received ACK48
+(A): Sending a message with SEQ# 49
+(B): Received the correct packet. Sending ACK49
+(A): Received ACK49
+(A): Sending a message with SEQ# 50
+(B): Received the correct packet. Sending ACK50
+(A): Received ACK50
+(A): Sending a message with SEQ# 51
+(B): Received the correct packet. Sending ACK51
+(A): Received ACK51
+(A): Sending a message with SEQ# 52
+(B): Received the correct packet. Sending ACK52
+(A): Received ACK52
+(A): Sending a message with SEQ# 53
+(B): Received the correct packet. Sending ACK53
+(A): Received ACK53
+(A): Sending a message with SEQ# 54
+(B): Received the correct packet. Sending ACK54
+(A): Received ACK54
+(A): Sending a message with SEQ# 55
+(B): Received the correct packet. Sending ACK55
+(A): Received ACK55
+(A): Sending a message with SEQ# 56
+(A): Sending a message with SEQ# 57
+(B): Received the correct packet. Sending ACK56
+(B): Received the correct packet. Sending ACK57
+(A): Received ACK56
+(A): Received ACK57
+(A): Sending a message with SEQ# 58
+(B): Received the correct packet. Sending ACK58
+(A): Received ACK58
+(A): Sending a message with SEQ# 59
+(B): Received the correct packet. Sending ACK59
+(A): Received ACK59
+(A): Sending a message with SEQ# 60
+(B): Received the correct packet. Sending ACK60
+(A): Received ACK60
+(A): Sending a message with SEQ# 61
+(B): Received the correct packet. Sending ACK61
+(A): Received ACK61
+(A): Sending a message with SEQ# 62
+(B): Received the correct packet. Sending ACK62
+(A): Received ACK62
+(A): Sending a message with SEQ# 63
+(B): Received the correct packet. Sending ACK63
+(A): Received ACK63
+(A): Sending a message with SEQ# 64
+(B): Received the correct packet. Sending ACK64
+(A): Received ACK64
+(A): Sending a message with SEQ# 65
+(B): Received the correct packet. Sending ACK65
+(A): Received ACK65
+(A): Sending a message with SEQ# 66
+(B): Received the correct packet. Sending ACK66
+(A): Received ACK66
+(A): Sending a message with SEQ# 67
+(B): Received the correct packet. Sending ACK67
+(A): Received ACK67
+(A): Sending a message with SEQ# 68
+(B): Received the correct packet. Sending ACK68
+(A): Received ACK68
+(A): Sending a message with SEQ# 69
+(B): Received the correct packet. Sending ACK69
+(A): Received ACK69
+(A): Sending a message with SEQ# 70
+(B): Received the correct packet. Sending ACK70
+(A): Received ACK70
+(A): Sending a message with SEQ# 71
+(B): Received the correct packet. Sending ACK71
+(A): Received ACK71
+(A): Sending a message with SEQ# 72
+(B): Received the correct packet. Sending ACK72
+(A): Received ACK72
+(A): Sending a message with SEQ# 73
+(B): Received the correct packet. Sending ACK73
+(A): Received ACK73
+(A): Sending a message with SEQ# 74
+(B): Received the correct packet. Sending ACK74
+(A): Received ACK74
+(A): Sending a message with SEQ# 75
+(B): Received the correct packet. Sending ACK75
+(A): Received ACK75
+(A): Sending a message with SEQ# 76
+(B): Received the correct packet. Sending ACK76
+(A): Received ACK76
+(A): Sending a message with SEQ# 77
+(B): Received the correct packet. Sending ACK77
+(A): Received ACK77
+(A): Sending a message with SEQ# 78
+(B): Received the correct packet. Sending ACK78
+(A): Received ACK78
+(A): Sending a message with SEQ# 79
+(B): Received the correct packet. Sending ACK79
+(A): Received ACK79
+Simulator terminated at time 96965.4225287637
+Simulation Completed!
