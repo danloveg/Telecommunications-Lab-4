@@ -157,6 +157,7 @@ public class StudentNetworkSimulator extends NetworkSimulator
                 toLayer3(B, packetToSend);
                 toLayer5(packet.getPayload());
 
+                ReceiverState.lastGoodPacketReceived = packet.getSeqnum();
                 ReceiverState.sequenceNumberRequired++;
             } else {
                 System.out.println("(B): Received out of order packet. Sending ACK " +
